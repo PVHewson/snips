@@ -1,0 +1,18 @@
+{
+  snippets : [
+    {
+      id: 1,
+      name: "Snip #1",
+      description: " Description #1"
+      tags: ["tag1.1", "tag1.2"],
+      version: "1.0.01"
+    },
+    {
+      id: 2,
+      name: "Snip #2",
+      description: " Description #2"
+      tags: ["tag2.1", "tag2.2"],
+      version: "2.0.01"
+    },
+  ]
+}
