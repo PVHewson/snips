@@ -7,10 +7,10 @@
    - Open your web browser and go to DevTools (`F12` or `Ctrl+Shift+I`).
    - Navigate to the "Sources" tab.
    - Locate the "Snippets" section and create a new snippet.
-   - Copy the contents of `snip-runner.js` from this repository and paste it into your new snippet, then save it.
+   - Copy the contents of `snip-menu.js` from this repository and paste it into a new snippet, then save it.
 
 2. **Accessing and Running the Snippet**
-   - While using any Microsoft Dynamics 365 application, open DevTools and run the `snip-runner.js` snippet.
+   - While using any Microsoft Dynamics 365 application, open DevTools and run the `snip-menu.js` snippet.
    - Once run, this will add a click event to the "Dynamics 365" label in the application header.
    - Click the "Dynamics 365" label to launch the snippet selector.
 
