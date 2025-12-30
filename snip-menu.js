@@ -686,4 +686,6 @@ async function SnippetRunner() {
 
 const element = document.querySelector('[data-id="dynamics-button"]');
 element.addEventListener("click", SnippetRunner);
-element.setAttribute("title", "SnippetRunner ...")
+element.setAttribute("title", "SnippetRunner ...");
+element.style.cursor = "pointer";
+
