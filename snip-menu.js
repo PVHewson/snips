@@ -14,6 +14,69 @@
  * Manifest example is included at the bottom of this file.
  */
 
+
+  // ---- Cookie helpers ----
+  function getCookie(name) {
+    const nameEQ = encodeURIComponent(name) + "=";
+    const parts = document.cookie.split("; ");
+    for (const part of parts) {
+      if (part.startsWith(nameEQ)) {
+        return decodeURIComponent(part.substring(nameEQ.length));
+      }
+    }
+    return null;
+  }
+
+  // monthsToDays is approximate; we’ll use 6 months ≈ 182 days.
+  function setCookie(name, value, days = 182, options = {}) {
+    const {
+      path = "/",
+      secure = false,            // Set to true if your site is served via HTTPS
+      sameSite = "Lax",          // Lax is a safe default; can be "Strict" or "None" (with secure:true)
+      domain,                    // e.g., ".example.com" if needed
+    } = options;
+
+    const expires = new Date();
+    expires.setDate(expires.getDate() + days);
+
+    let cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; Expires=${expires.toUTCString()}; Path=${path}; SameSite=${sameSite}`;
+    if (secure) cookie += "; Secure";
+    if (domain) cookie += `; Domain=${domain}`;
+
+    document.cookie = cookie;
+  }
+
+  // ---- Usage: read-or-prompt-and-set ----
+  function ensureCookie() {
+    const COOKIE_NAME = "githubToken";
+    let val = getCookie(COOKIE_NAME);
+
+    if (!val) {
+      // Prompt the user. You can replace `prompt` with a custom modal for better UX.
+      const input = window.prompt("Please enter your GitHub Personal Access Token:");
+      if (input && input.trim() !== "") {
+        val = input.trim();
+
+        // Set cookie for ~6 months
+        setCookie(COOKIE_NAME, val, 182, {
+          path: "/",
+          sameSite: "Lax",
+          secure: location.protocol === "https:" // only set Secure on HTTPS
+        });
+
+        console.log("Cookie created:", COOKIE_NAME, val);
+      } else {
+        // Handle cancel or empty input as needed
+        console.warn("No value provided; cookie not created.");
+      }
+    } else {
+      console.log("Cookie found:", COOKIE_NAME, val);
+    }
+
+    return val;
+  }
+
+
 async function SnippetRunner() {
   const CONFIG = {
     owner: "PVHewson",
@@ -186,9 +249,7 @@ async function SnippetRunner() {
 
       // Only prompt if it looks like access is the issue
       if ([401, 403, 404].includes(status)) {
-        const token = prompt(
-          "This repo/path may be private or blocked. Paste a GitHub Personal Access Token (classic or fine-grained) with read access.\n\n(Leave blank to cancel.)"
-        );
+        const token = ensureCookie();
         if (token && token.trim()) {
           CONFIG.githubToken = token.trim();
           return fetchViaGithubApi(url);
@@ -625,3 +686,4 @@ async function SnippetRunner() {
 
 const element = document.querySelector('[data-id="dynamics-button"]');
 element.addEventListener("click", SnippetRunner);
+element.setAttribute("title", "SnippetRunner ...")
