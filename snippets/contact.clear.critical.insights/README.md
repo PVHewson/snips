@@ -4,6 +4,8 @@
 ## Source file
 Expects a source file containing Contact GUIDs
 
+---
+
 ## Processing
 Processes contact records in batches of 500.
 

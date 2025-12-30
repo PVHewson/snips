@@ -288,7 +288,7 @@ document.body.appendChild(root);
 
 // Styles (scoped-ish)
 const style = createEl("style", {}, [`
-.sr-root { position: fixed; inset: 0; z-index: 2147483647; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.sr-root { position: fixed; inset: 0; z-index: 90000; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 .sr-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
 .sr-panel { position: absolute; top: 5vh; left: 50%; transform: translateX(-50%); width: min(1100px, 92vw); height: 90vh; background: #111; color: #eee; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 80px rgba(0,0,0,0.55); display:flex; flex-direction:column; }
 .sr-header { display:flex; justify-content:space-between; align-items:center; padding: 12px 14px; background: #161616; border-bottom: 1px solid rgba(255,255,255,0.08); }
