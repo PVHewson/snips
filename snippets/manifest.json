@@ -1,28 +1,26 @@
 {
     "snippets": [
         {
-            "id": 1,
-            "name": "Snip #1",
-            "description": " Description #1",
+            "id": "demo.alert.bob",
+            "name": "Sample snip #1",
+            "description": "Alert a greeting to Bob",
             "tags": [
-                "tag1.1",
-                "tag1.2"
+                "Demo"
             ],
-            "version": "1.0.01"
+            "version": "1.0.1"
         },
         {
-            "id": 2,
-            "name": "Snip #2",
-            "description": " Description #2",
+            "id": "demo.alert.username",
+            "name": "Sample snip #2",
+            "description": "Alert a greeting to the current Xrm user",
             "tags": [
-                "tag2.1",
-                "tag2.2"
+                "Demo"
             ],
-            "version": "2.0.01"
+            "version": "1.0.1"
         },
         {
             "id": "contact.clear.critical.insights",
-            "name": "Contact - Set critical insight to flase",
+            "name": "Contact - Set critical insight to false",
             "description": "Data fix - require for Contacts incorrectly marked as having a critical insight",
             "tags": [
                 "Contact",
