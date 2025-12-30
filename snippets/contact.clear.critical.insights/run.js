@@ -10,7 +10,7 @@ position:fixed;
 top:0; left:0;
 width:100%; height:100%;
 background:rgba(0,0,0,0.45);
-z-index:99998;
+z-index:199998;
 `;
 document.body.append(overlay);
 
@@ -28,7 +28,7 @@ box-shadow:0 12px 40px rgba(0,0,0,0.3);
 font-family:sans-serif;
 display:flex;
 flex-direction:column;
-z-index:99999;
+z-index:199999;
 `;
 document.body.append(modal);
 
