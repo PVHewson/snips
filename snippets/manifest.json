@@ -19,6 +19,16 @@
                 "tag2.2"
             ],
             "version": "2.0.01"
+        },
+        {
+            "id": "contact.clear.critical.insights",
+            "name": "Contact - Set critical insight to flase",
+            "description": "Data fix - require for Contacts incorrectly marked as having a critical insight",
+            "tags": [
+                "Contact",
+                "Insight"
+            ],
+            "version": "1.0.00"
         }
     ]
 }
