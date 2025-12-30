@@ -20,3 +20,6 @@
 
 **Note:** Always review and understand the code you are running in your CRM environment to ensure both security and compliance.
 
+# To do
+1. Add filter options to snips. These would allow the restriction of snips to only show in certain contexts, such as a list or a page display, or for only certain entities
+
