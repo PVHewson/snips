@@ -1,7 +1,23 @@
-
 # snips
 
 ## Usage Instructions
+
+### Option 1: Install as an Unpacked Extension (Recommended)
+
+1. **Download the `extension` folder from this repository.**
+   - You can either clone the repository or download the `extension` folder as a ZIP file and extract it.
+
+2. **Add the extension to your browser.**
+   - Open your web browser and navigate to the extensions page (for Chrome-based browsers, go to `chrome://extensions/`).
+   - Enable "Developer mode" (usually found at the top right).
+   - Click "Load unpacked" and select the downloaded/extracted `extension` folder.
+   - The extension should now appear in your extensions list.
+
+3. **Use the Extension in Microsoft Dynamics 365**
+   - Make sure the extension is enabled.
+   - While using any Microsoft Dynamics 365 application, the extension will provide access to the snippet menu, allowing you to easily select and run snippets within the CRM context.
+
+### Option 2: Add as a Local DevTools Snippet
 
 1. **Add the snip-runner.js file as a new snippet in your browser DevTools.**
    - Open your web browser and go to DevTools (`F12` or `Ctrl+Shift+I`).
@@ -22,4 +38,3 @@
 
 # To do
 1. Add filter options to snips. These would allow the restriction of snips to only show in certain contexts, such as a list or a page display, or for only certain entities
-
