@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "D365 Snippet Runner (GitHub)",
+  "version": "0.2.0",
+  "description": "Run GitHub-backed JS snippets in the current tab (MAIN world) so they can access Xrm.",
+  "action": {
+    "default_title": "Snips",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://raw.githubusercontent.com/*",
+    "https://api.github.com/*",
+    "https://*.dynamics.com/*",
+    "https://*.powerapps.com/*"
+  ]
+}
