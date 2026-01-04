@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snips</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="sr-root" class="sr-root">
+      <div class="sr-panel" role="dialog" aria-modal="true">
+        <div class="sr-header">
+          <div id="srTitle" class="sr-title">Team Snippets (GitHub)</div>
+          <div class="sr-actions">
+            <button id="srReload" class="sr-btn sr-btn-ghost" title="Reload manifest">Reload</button>
+            <button id="srToken" class="sr-btn sr-btn-ghost" title="Set GitHub token (for private repos / rate limits)">Token</button>
+          </div>
+        </div>
+
+        <div class="sr-body">
+          <div class="sr-left">
+            <input id="srSearch" class="sr-search" placeholder="Search snippets…" autocomplete="off" />
+            <div id="srList" class="sr-list"></div>
+          </div>
+
+          <div class="sr-right">
+            <div id="srMeta" class="sr-meta">Select a snippet to preview its README.</div>
+            <div id="srPreview" class="sr-preview"></div>
+            <div class="sr-footer">
+              <button id="srRun" class="sr-btn sr-btn-primary" disabled>Run</button>
+              <button id="srCopy" class="sr-btn" disabled>Copy code</button>
+              <button id="srOpen" class="sr-btn" disabled>Open in GitHub</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <dialog id="srTokenDialog" class="sr-dialog">
+      <form method="dialog" class="sr-dialog-form">
+        <h3 class="sr-dialog-title">GitHub Token</h3>
+        <p class="sr-dialog-sub">Only needed for private repos or GitHub API rate limits. Stored locally in this extension.</p>
+
+        <label class="sr-dialog-label">
+          Personal Access Token
+          <input id="srTokenInput" class="sr-dialog-input" type="password" placeholder="ghp_…" autocomplete="off" />
+        </label>
+
+        <menu class="sr-dialog-menu">
+          <button value="cancel" class="sr-btn">Cancel</button>
+          <button id="srTokenSave" value="default" class="sr-btn sr-btn-primary">Save</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
